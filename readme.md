@@ -33,7 +33,7 @@ Example
 ```
 npm run crawl -- --url=https://initialpage.com
 ```
-if you want to change the max recursion search you can do as follow:
+if you want to change the maximum search distance you can do as follow:
 
 Example
 ---
