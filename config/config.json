@@ -1,7 +1,7 @@
 {
   "development": {
    
-    "storage": "database/database.sqlite",
+    "storage": "database/",
  
     "dialect": "sqlite"
   },
@@ -9,10 +9,10 @@
  
     "dialect": "sqlite",
  
-    "storage": "database/sqlite.bd"
+    "storage": "database/"
   },
   "production": {
-    "storage": "database/sqlite.bd",
+    "storage": "database/",
     "dialect": "sqlite"
   }
 }

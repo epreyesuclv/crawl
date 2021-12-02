@@ -5,32 +5,26 @@ let URL = require("url-parse");
 
 const axios = require("axios");
 
+const options = JSON.parse(process.env.options);
 
-let START_URL ;
-let MAX_PAGES_TO_VISIT;
-
+let START_URL = options.url;
+let MAX_PAGES_TO_VISIT = options.maxdist;
 let pagesVisited = {};
 let numPagesVisited = 0;
 let pagesToVisit = [];
-let url ;
-let baseUrl ;
+let url = new URL(START_URL);
+console.log(process.env);
+let baseUrl = url.protocol + "//" + url.hostname;
 
-function init(start_url,max_pages_to_visit){
-  MAX_PAGES_TO_VISIT = max_pages_to_visit;
-  START_URL = start_url;
-  pagesToVisit.push(START_URL);
-url = new URL(START_URL);
-baseUrl = url.protocol + "//" + url.hostname;
-  
-}
+pagesToVisit.push(START_URL);
+
 async function* crawl() {
-
   if (numPagesVisited >= MAX_PAGES_TO_VISIT) {
     //console.log(data);
     console.log("Reached max limit of number of pages to visit.");
     return;
   }
-  if (!pagesToVisit.length) return
+  if (!pagesToVisit.length) return;
   let nextPage = pagesToVisit.pop();
   if (nextPage in pagesVisited) {
     // We've already visited this page, so repeat the crawl
@@ -93,4 +87,4 @@ function collectLinks($) {
   });
 }
 
-module.exports = { crawl,init };
+module.exports = { crawl };
