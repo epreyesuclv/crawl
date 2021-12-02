@@ -41,7 +41,7 @@ Example
 npm run dev crawl -- --maxdist=3
 ```
 
-Of course you can use all parameers at once, like this:
+Of course you can use all parameters at once, like this:
 
 Example
 ---
