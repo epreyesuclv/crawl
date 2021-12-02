@@ -1,3 +1,5 @@
+//this file is only for load arguments
+
 const commandLineArgs = require("command-line-args");
 
 

@@ -1,4 +1,7 @@
+
+//load the arguments
 require("./initial")();
+
 const { Page } = require("../models/index");
 const { crawl } = require("./crawler");
 require("../models").sequelize.sync();
@@ -9,8 +12,9 @@ async function start() {
   while (!data.done) {
     //console.log(data.value)
     const old = await Page.findByPk(data.value.url);
-    //console.log("\\n".replace("\n","232323"))
+
     if (!old) {
+      //store the new data
       await Page.create({
         url: data.value.url,
 
@@ -20,6 +24,7 @@ async function start() {
         console.log(err);
       });
     }
+    //go to the next iteration
     data = await itdata.next();
     //console.log(data);
     //console.log((await Page.findAll()).length);

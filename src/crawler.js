@@ -8,12 +8,14 @@ const axios = require("axios");
 const options = JSON.parse(process.env.options);
 
 let START_URL = options.url;
+
 let MAX_PAGES_TO_VISIT = options.maxdist;
+
 let pagesVisited = {};
 let numPagesVisited = 0;
 let pagesToVisit = [];
+
 let url = new URL(START_URL);
-console.log(process.env);
 let baseUrl = url.protocol + "//" + url.hostname;
 
 pagesToVisit.push(START_URL);
@@ -66,7 +68,7 @@ async function* visitPage(url) {
     //console.log(body);
     //store here
     collectLinks($);
-    // In this short program, our callback is just calling crawl()
+    
   });
 
   //console.log('insadi crawler data',data);
