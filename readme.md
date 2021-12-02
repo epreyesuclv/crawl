@@ -19,7 +19,7 @@ you can install all this simple running
 ```
 npm install
 ```
-if you want to change default name you need to use --bdname parameter
+if you want to change database default name you need to use --bdname parameter
 
 Example
 -------
