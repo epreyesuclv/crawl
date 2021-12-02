@@ -19,7 +19,7 @@ you can install all this simple running
 ```
 npm install
 ```
-if you want to change default name you need to use --bdname parameter
+if you want to change database default name you need to use --bdname parameter
 
 Example
 -------
@@ -33,7 +33,7 @@ Example
 ```
 npm run crawl -- --url=https://initialpage.com
 ```
-if you want to change the max recursion search you can do as follow:
+if you want to change the maximum search distance you can do as follow:
 
 Example
 ---
@@ -41,7 +41,7 @@ Example
 npm run dev crawl -- --maxdist=3
 ```
 
-Of course you can use all parameers at once, like this:
+Of course you can use all parameters at once, like this:
 
 Example
 ---
